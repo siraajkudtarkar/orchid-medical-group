@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Orchid Medical Group | Family & Pediatric Medicine — Redlands, CA",
+  title: "Orchid Medical Group Redlands",
   description:
     "Orchid Medical Group provides compassionate family and pediatric healthcare in Redlands, CA. Led by Dr. Sanjay Kudtarkar and Dr. Swapna Kudtarkar. IEHP accepted. Accepting new patients — book an appointment today.",
   keywords: [
