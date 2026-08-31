@@ -2,25 +2,80 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+  --foreground: #111827;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins);
+
+  /* Override the violet scale with Orchid Medical Group brand colors.
+     Brand dark: #3B254D  (maps to violet-800)
+     Brand light: #DBBBDC (maps to violet-200) */
+  --color-violet-50:  #f8f4f9;
+  --color-violet-100: #efe4f0;
+  --color-violet-200: #DBBBDC;
+  --color-violet-300: #c89eca;
+  --color-violet-400: #b07eb3;
+  --color-violet-500: #8f5e93;
+  --color-violet-600: #6e4473;
+  --color-violet-700: #54355a;
+  --color-violet-800: #3B254D;
+  --color-violet-900: #281838;
+  --color-violet-950: #180e23;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), 'Poppins', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Skip navigation for keyboard/screen reader users */
+.skip-nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: #3B254D;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transform: translateY(-100%);
+  transition: transform 0.15s ease;
+  text-decoration: none;
+}
+
+.skip-nav:focus {
+  transform: translateY(0);
+}
+
+/* High-contrast focus styles for accessibility */
+:focus-visible {
+  outline: 3px solid #3B254D;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Star rating colors */
+.star-filled {
+  color: #f59e0b;
+}
+
+.star-empty {
+  color: #d1d5db;
+}
+
+/* Doctor carousel progress bar */
+@keyframes progress-bar {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+.animate-progress-bar {
+  animation: progress-bar linear forwards;
 }
